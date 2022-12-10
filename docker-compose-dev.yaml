@@ -1,8 +1,14 @@
-version: 3
+version: "3"
 services:
     mc:
-        build: .
+        build: ./
+        container_name: "DDS-docker-dev"
         ports:
             -   25565:25565
         volumes:
-            -   ./tmp/world:/app/world
+            -   DDS:/app
+        environment:
+             EULA: true
+             OP: mari0theminer
+volumes:
+    DDS:

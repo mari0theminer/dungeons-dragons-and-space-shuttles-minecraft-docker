@@ -1,4 +1,14 @@
-version: 3
+version: "3"
 services:
     mc:
-        image:
+        image: mari0theminer/dss_mc
+        container_name: "Minecraft_DDS_Server"
+        ports:
+            -   25565:25565
+        volumes:
+            -   DDS:/app
+        environment:
+            EULA: true
+            OP: ""
+volumes:
+    DDS:
