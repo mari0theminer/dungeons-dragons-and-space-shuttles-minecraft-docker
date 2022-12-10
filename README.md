@@ -42,8 +42,9 @@ services:
         volumes:
             -   DDS:/app
         environment:
-            EULA: true
+            EULA: "true"
             OP: ""
+        restart: always
 volumes:
     DDS:
 ```
