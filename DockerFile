@@ -1,0 +1,11 @@
+FROM ubuntu:latest
+WORKDIR /app
+EXPOSE 25565
+ENV EULA false
+
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install default-jdk -y
+ADD DDS .
+RUN sed -i "s/false/$eula/g" eula.txt
+CMD java -Xms1024M -Xmx6048M -jar forge-1.12.2-14.23.5.2847-universal.jar nogui
